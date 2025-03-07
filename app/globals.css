@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Arabic font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer components {
+  /* Custom styles */
+  .font-arabic {
+    font-family: 'Noto Naskh Arabic', serif;
+    direction: rtl;
+  }
+
+  /* Table styles */
+  table {
+    table-layout: fixed;
+    border-spacing: 0.25rem;
+    border-collapse: separate;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  td {
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    aspect-ratio: 1;
+    width: calc(100% / 6);
+    max-width: 120px;
+  }
+
+  /* Solar/Lunar indicator */
+  .solar-lunar-indicator {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .solar-lunar-indicator {
+    background: rgba(31, 41, 55, 0.9);
+  }
+
+  .letter-card:hover .solar-lunar-indicator {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Card hover effects */
+  .letter-card {
+    transform: translateY(0);
+    transition: all 0.2s ease-in-out;
+    height: 100%;
+    width: 100%;
+  }
+
+  .letter-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .letter-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Details table styles */
+  .details-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .details-table th,
+  .details-table td {
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .dark .details-table {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark .details-table th,
+  .dark .details-table td {
+    background: #1f2937;
+    border-bottom: 1px solid rgba(75, 85, 99, 0.4);
+  }
+
+  .details-table th {
+    background: #f3f4f6;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .dark .details-table th {
+    background: #374151;
+    color: white;
+  }
+
+  .audio-button {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+  }
+
+  .audio-button:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+  }
+
+  .letter-header {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .dark .letter-header {
+    background: linear-gradient(135deg, #374151, #1f2937);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  table {
+    border-spacing: 0.15rem;
+  }
+  
+  td {
+    max-width: none;
+  }
+  
+  .letter-card {
+    padding: 0.25rem !important;
+  }
+  
+  .details-table th,
+  .details-table td {
+    padding: 0.75rem;
+  }
+
+  .letter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive container */
+.max-w-7xl {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 1280px) {
+  .max-w-7xl {
+    max-width: 100%;
+  }
+}
+
+/* Selected letter details responsive adjustments */
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .gap-8 {
+    gap: 1.5rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-xl {
+    font-size: 1.25rem;
+  }
+}
+
+.details-table td.letter-form {
+  font-size: 2rem;
+  text-align: center;
+  background: #f9fafb;
+}
+
+.dark .details-table td.letter-form {
+  background: #374151;
+}
+
+.details-table .form-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.details-table .property-value {
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.letter-header .letter-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.letter-header .letter-isolated {
+  font-size: 2.5rem;
+  color: #2563eb;
+}

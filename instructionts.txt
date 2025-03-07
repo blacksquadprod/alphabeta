@@ -1,0 +1,22 @@
+As you can see, I have already created a basic Next.js application.
+In the file "app/page.tsx", I want you to create the following elements:
+
+A list of Arabic alphabet letters. For each letter (e.g.,Hamza, Alif, Bâ, Tâ, Thâ, Jīm, Ḥā, Khā, Dāl, Dhāl, Rā, Zāy, Sīn, Shīn, Ṣād, Ḍād, Ṭā, Ẓā, `Ayn, Rhayn, Fā, Qāf, Kāf, Lâm, Mīm, Nūn, Hā, Wāw, Yāʾ, LâmAlif .), we should have:
+لا يـــــيـــــي وــــــو هـــــهـــــه نـــــنـــــن مـــــمـــــم لـــــلـــــل كـــــكـــــك قـــــقـــــق فـــــفـــــف	 غـــــغـــــغ عـــــعـــــع ظـــــظـــــظ طـــــطـــــط ضـــــضـــــض صـــــصـــــصشـــــشـــــش ســـــســـــس زـــــــز رــــــر ذـــــــذ دـــــــد خـــــخـــــخحـــــحـــــح جـــــجـــــج ثـــــثـــــث تـــــتـــــت بـــــبـــــب اـــــا أ, إ, ؤ, ئ	
+Its solar or lunar quality
+Its articulation point (Makharij)
+Its name of letter
+The calligraphic representation of the letter in Arabic in its isolated, final, medial, and initial forms.
+The ability to hear its pronunciation
+I want, all the letters to be displayed in a table with 6 vertical columns 
+and 5 horizontal rows, for a total of 30 letters. 
+When a letter is hovered over, 
+it should indicate whether it is solar or lunar with a logo. 
+When I click on it, the selected letter should appear, 
+it should display a text in an area like:
+
+"Selected letter: Alif"
+If no letter has been chosen, display:
+"You must search for a letter using the search bar above."
+If the user has validated a letter, display all the information related to the selected letter
+ (Solar/Lunar classification, pronunciation, phonetics, articulation point, etc.).
