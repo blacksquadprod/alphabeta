@@ -340,7 +340,7 @@ export default function Home() {
       {/* Header */}
       <header className="max-w-7xl mx-auto mb-8 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Apprentissage de l'Alphabet Arabe
+          Apprentissage de l&apos;Alphabet Arabe
         </h1>
       </header>
 
