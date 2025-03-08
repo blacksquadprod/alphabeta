@@ -50,7 +50,7 @@ export const LetterDetails = ({ letter }: LetterDetailsProps) => {
             </td>
           </tr>
           <tr>
-            <th className="dark:bg-gray-700 dark:text-white">Point d'Articulation (Makharij)</th>
+            <th className="dark:bg-gray-700 dark:text-white">Point d&apos;Articulation (Makharij)</th>
             <td colSpan={3} className="dark:bg-gray-800">
               <div className="property-value dark:text-white">
                 {letter.makharij}
