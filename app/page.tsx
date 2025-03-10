@@ -176,7 +176,7 @@ const arabicLetters: ArabicLetter[] = [
     initial: 'طـ',
     isSolar: true,
     makharij: 'Dental',
-    audioUrl: getAudioPath('ta'),
+    audioUrl: getAudioPath('taa'),
   },
   {
     name: 'Ẓā',
@@ -276,7 +276,7 @@ const arabicLetters: ArabicLetter[] = [
     initial: 'هـ',
     isSolar: false,
     makharij: 'Glottal',
-    audioUrl: getAudioPath('ha'),
+    audioUrl: getAudioPath('haa'),
   },
   {
     name: 'Wāw',
